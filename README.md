@@ -20,5 +20,4 @@ Talvez não só aquele, mas tantos outros que elencam estruturas definidas em Py
 Lembrando a querida **Grace Hopper**:
 >The most damaging phrase in the language is: It's always been done that way.
 
-``` diff 
-+ green```
+``` diff + green
