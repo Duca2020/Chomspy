@@ -18,4 +18,4 @@ print(text)
 Talvez não só aquele, mas tantos outros que elencam estruturas definidas em Python mas que o real sentido é posto de lado ao se ensinar; O esboço de uma linguagem reside na comunicação, seja entre humanos seja entre máquinas, mais além, intervir nesse processo de forma desenvolvimentista é chave para a formação de falantes de python. Talvez não só a linguagem mas a matemática administre o curso desse conhecimento, aqui leitor fica a seu cargo pegar todo esse fardo da informação e desmebrar parte por parte, religando por novos caminhos e formando novos objetos.
 
 Lembrando a querida **Grace Hopper**:
->The most damaging phrase in the language is: It's always been done that way.
+>The most damaging phrase in the language is: "It's always been done that way".
