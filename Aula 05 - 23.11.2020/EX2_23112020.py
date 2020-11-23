@@ -1,6 +1,6 @@
 #Ressolução do exercício 2 do último slide da aula 05
 #Aqui iremos apresentar de acordo com os recursos apresentados em aula,
-#sem deixar de trazer algumas novidades
+#sem deixar de trazer algumas novidade
 
 valores = []
 while (n:=len(valores) < 3):
