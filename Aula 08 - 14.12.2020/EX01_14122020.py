@@ -9,13 +9,13 @@ while True:
         break
 
 C1=list(filter(lambda x: 0<=x<=25, numeros)) #Primeira condição
-print(f"\nDos números que você digitou, estão no intervalo [0-25]: {C1}")
+print(f"\nDos números que você digitou, estão no intervalo [0-25] {len(C1)} números, sendo eles: {sorted(C1)}")
 
 C2=list(filter(lambda x: 26<=x<=50, numeros)) #Segunda condição
-print(f"\nDos números que você digitou, estão no intervalo [26-50]: {C2}")
+print(f"\nDos números que você digitou, estão no intervalo [26-50] {len(C2)} números, sendo eles: {sorted(C2)}")
 
 C3=list(filter(lambda x: 51<=x<=75, numeros)) #Terceira condição
-print(f"\nDos números que você digitou, estão no intervalo [51-75]: {C3}")
+print(f"\nDos números que você digitou, estão no intervalo [51-75] {len(C3)} números, sendo eles: {sorted(C3)}")
 
 C4=list(filter(lambda x: 76<=x<=100, numeros)) #Quarta condição
-print(f"\nDos números que você digitou, estão no intervalo [76-100]: {C4}")
+print(f"\nDos números que você digitou, estão no intervalo [76-100] {len(C4)} números, sendo eles: {sorted(C4)}")
