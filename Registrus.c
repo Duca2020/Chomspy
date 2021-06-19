@@ -14,7 +14,6 @@ int menu_principal(){
     printf("4 - Relatorios\n");
     printf("0 - Sair\n");
     scanf("%d",&choice);
-
     return choice;}
 
 
@@ -28,7 +27,6 @@ int menu_relatorio(){
     printf("5 - Listar carros de marca e ano\n");
     printf("0 - Sair\n");
     scanf("%d",&escolha);
-
     return escolha;}
 
 
@@ -38,8 +36,6 @@ int find(int len, Carro vector[num], char placa[9]){
         if (strcmp(placa,vector[g].placa) ==0){ printf("Placa ja registrada!\n");return 1;}}
 
     return 0;}
-
-
 
 
 void ler(Carro vetor[num],int i) {
@@ -156,15 +152,12 @@ void find_print(int len, Carro vector[num], char placa[9]){
             printf("\n");}}}
 
 
-
-
 void exclui_carro(int len,Carro vector[num], char placa[9]){
     int cond=0;
     if (len>0){
         Carro temp;
         for (int g=0; g<len; g++){
             if(strcmp(vector[g].placa, placa)==0){cond=1;}
-
             if (cond==1){
                 strcpy(vector[g].marca, vector[g+1].marca);
                 strcpy(vector[g].cor, vector[g+1].cor);
@@ -179,12 +172,14 @@ int main(){
     Carro modelos[num];
     char placa [9];
 
-
     do{
         resp = menu_principal();
         switch (resp) {
-            case 1:{ler(modelos, idx); idx++;len++; break;}
-
+            default:{printf("Opcao invalida\n");break;}
+            case 1:{
+                if(idx<20){ler(modelos, idx); idx++;len++; break;}
+                else {printf("Limite de cadastro atingido! \n");}}
+                
             case 2:{
                 printf("Digite a placa a ser procurada:\n");
                 scanf("%s",placa);
@@ -197,16 +192,15 @@ int main(){
 
             case 4:{
                 int escolhe;
-                do {
-                    escolhe=menu_relatorio();
+                do {escolhe=menu_relatorio();
                     switch (escolhe) {
+                        default: {printf("Opcao invalida\n");break;}
                         case 1: {imprimi_td(len, modelos,1);break;}
                         case 2: {imprimi_td(len, modelos,2);break;}
                         case 3: {imprimi_td(len, modelos,3);break;}
                         case 4: {imprimi_td(len, modelos,4);break;}
                         case 5: {imprimi_td(len, modelos,5);break;}
                     }} while (escolhe!=0);}
-
         }} while (resp !=0);
 
 
