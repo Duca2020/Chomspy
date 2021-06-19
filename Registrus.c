@@ -5,7 +5,7 @@
 typedef struct carro {char marca[16]; int ano; int ano_comprou; char cor[11]; float preco; char placa[9];} Carro;
 
 int menu_principal(){
-int choice=0;
+    int choice=0;
 
     printf("MENU PRINCIPAL:\n");
     printf("1 - Cadastrar carro\n");
@@ -43,26 +43,26 @@ int find(int len, Carro vector[num], char placa[9]){
 
 
 void ler(Carro vetor[num],int i) {
-        do{
-            printf("Digite a marca do carro:\n");
-            scanf("%s", vetor[i].marca);
+    do{
+        printf("Digite a marca do carro:\n");
+        scanf("%s", vetor[i].marca);
 
-            printf("Digite o ano do carro:\n");
-            scanf("%d", &vetor[i].ano);
+        printf("Digite o ano do carro:\n");
+        scanf("%d", &vetor[i].ano);
 
-            printf("Digite o ano de aquisicao do carro:\n");
-            scanf("%d", &vetor[i].ano_comprou);
+        printf("Digite o ano de aquisicao do carro:\n");
+        scanf("%d", &vetor[i].ano_comprou);
 
-            printf("Digite a cor do carro:\n");
-            scanf("%s", vetor[i].cor);
+        printf("Digite a cor do carro:\n");
+        scanf("%s", vetor[i].cor);
 
-            printf("Digite o preco do carro:\n");
-            scanf("%f", &vetor[i].preco);
+        printf("Digite o preco do carro:\n");
+        scanf("%f", &vetor[i].preco);
 
-            printf("Digite a placa do carro:\n");
-            scanf("%s", vetor[i].placa);
-            printf("\n");
-        } while (find(i, vetor, vetor[i].placa));}
+        printf("Digite a placa do carro:\n");
+        scanf("%s", vetor[i].placa);
+        printf("\n");
+    } while (find(i, vetor, vetor[i].placa));}
 
 
 void imprimi_td(int len, Carro vector [num], int opcao) {
@@ -131,7 +131,7 @@ void imprimi_td(int len, Carro vector [num], int opcao) {
             scanf("%d", &ano);
             printf("\nDigite a marca para busca:\n");
             scanf("%s",marca);
-            for (int i = 0; i < len; i++) {
+            for (int i = 0; i <= len; i++) {
                 if (strcmp(vector[i].marca,marca)==0 && vector[i].ano<=ano){
                     printf("Carro %d:\n", i + 1);
                     printf("%s\n", vector[i].marca);
@@ -153,8 +153,7 @@ void find_print(int len, Carro vector[num], char placa[9]){
             printf("%s\n", vector[g].cor);
             printf("R$ %.2f\n", vector[g].preco);
             printf("%s\n", vector[g].placa);
-            printf("\n");}
-        }}
+            printf("\n");}}}
 
 
 
@@ -167,48 +166,48 @@ void exclui_carro(int len,Carro vector[num], char placa[9]){
             if(strcmp(vector[g].placa, placa)==0){cond=1;}
 
             if (cond==1){
-            strcpy(vector[g].marca, vector[g+1].marca);
-            strcpy(vector[g].cor, vector[g+1].cor);
-            strcpy(vector[g].placa, vector[g+1].placa);
-            vector[g].ano = vector[g+1].ano;
-            vector[g].ano_comprou = vector[g+1].ano_comprou;
-            vector[g].preco = vector[g+1].preco;}}}}
+                strcpy(vector[g].marca, vector[g+1].marca);
+                strcpy(vector[g].cor, vector[g+1].cor);
+                strcpy(vector[g].placa, vector[g+1].placa);
+                vector[g].ano = vector[g+1].ano;
+                vector[g].ano_comprou = vector[g+1].ano_comprou;
+                vector[g].preco = vector[g+1].preco;}}}}
 
 
 int main(){
-int idx=0, len=idx+1 ,resp;
-Carro modelos[num];
-char placa [9];
+    int idx=0, len=0 ,resp;
+    Carro modelos[num];
+    char placa [9];
 
 
-do{
-    resp = menu_principal();
-    switch (resp) {
-        case 1:{ler(modelos, idx); idx++; break;}
+    do{
+        resp = menu_principal();
+        switch (resp) {
+            case 1:{ler(modelos, idx); idx++;len++; break;}
 
-        case 2:{
-            printf("Digite a placa a ser procurada:\n");
-            scanf("%s",placa);
-            find_print(len, modelos, placa);break;}
+            case 2:{
+                printf("Digite a placa a ser procurada:\n");
+                scanf("%s",placa);
+                find_print(len, modelos, placa);break;}
 
-        case 3:{
-            printf("Digite a placa do carro a ser removido:\n");
-            scanf("%s",placa);
-            exclui_carro(len, modelos, placa); len--; break;}
+            case 3:{
+                printf("Digite a placa do carro a ser removido:\n");
+                scanf("%s",placa);
+                exclui_carro(len, modelos, placa); len--;idx--; break;}
 
-        case 4:{
-            int escolhe;
-            do {
-                escolhe=menu_relatorio();
-                switch (escolhe) {
-                    case 1: {imprimi_td(len, modelos,1);break;}
-                    case 2: {imprimi_td(len, modelos,2);break;}
-                    case 3: {imprimi_td(len, modelos,3);break;}
-                    case 4: {imprimi_td(len, modelos,4);break;}
-                    case 5: {imprimi_td(len, modelos,5);break;}
-                }} while (escolhe!=0);}
+            case 4:{
+                int escolhe;
+                do {
+                    escolhe=menu_relatorio();
+                    switch (escolhe) {
+                        case 1: {imprimi_td(len, modelos,1);break;}
+                        case 2: {imprimi_td(len, modelos,2);break;}
+                        case 3: {imprimi_td(len, modelos,3);break;}
+                        case 4: {imprimi_td(len, modelos,4);break;}
+                        case 5: {imprimi_td(len, modelos,5);break;}
+                    }} while (escolhe!=0);}
 
-}} while (resp !=0);
+        }} while (resp !=0);
 
 
     return 0;}
