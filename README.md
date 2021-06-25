@@ -19,3 +19,6 @@ Talvez não só aquele, mas tantos outros que elencam estruturas definidas em Py
 
 Lembrando a querida **Grace Hopper**:
 >The most damaging phrase in the language is: "It's always been done that way".
+
+
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Duca2020)](https://github.com/anuraghazra/github-readme-stats)
